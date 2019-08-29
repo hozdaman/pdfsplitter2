@@ -23,8 +23,8 @@ def splitter():
 
 @app.route("/download")
 def download():
-    filename = file.split(".")[0] + "split.pdf"
-    return send_file(filename, as_attachment= True)
+    filename = file.split('{}_page_{}.pdf')
+    return send_file(filename, attachment_filename = True, as_attachment=True)
 
     
 
